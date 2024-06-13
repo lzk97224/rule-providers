@@ -1,0 +1,24 @@
+rule-providers:
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  ChatGPT:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/G4free/clash-ruleset/main/ruleset/ChatGPT.yaml"
+    path: ./ruleset/ChatGPT.yaml
+    interval: 86400
+  custom:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lzk97224/rule-providers/main/custom.yaml"
+    path: ./ruleset/custom.yaml
+    interval: 86400
+rules:
+  - 'RULE-SET,ChatGPT,🇺🇸 美国节点'
+  - 'RULE-SET,gfw,🌀 手动选择'
+  - 'RULE-SET,custom,🌀 手动选择'
+  - 'MATCH,DIRECT'
