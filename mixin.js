@@ -23,5 +23,5 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
   xhr.send();
   console.log(result)
   
-  return content
+  return result
 }
