@@ -5,7 +5,7 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
   var xhr = new XMLHttpRequest();
 
   // 配置同步的GET请求
-  xhr.open('GET', 'https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt', false); // 注意这里的false参数，它指定了请求为同步
+  xhr.open('GET', 'https://raw.githubusercontent.com/lzk97224/rule-providers/main/mixin.yaml', false); // 注意这里的false参数，它指定了请求为同步
 
   // 设置请求完成后的处理函数
   xhr.onload = function () {
