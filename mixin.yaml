@@ -17,8 +17,14 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lzk97224/rule-providers/main/custom.yaml"
     path: ./ruleset/custom.yaml
     interval: 86400
+  local:
+    type: file
+    behavior: domain
+    path: /Users/lizhikui/go/bin/mixin.xml
+    interval: 86400
 rules:
   - 'RULE-SET,ChatGPT,🇺🇸 美国节点'
   - 'RULE-SET,gfw,🌀 手动选择'
   - 'RULE-SET,custom,🌀 手动选择'
+  - 'RULE-SET,local,🌀 手动选择'
   - 'MATCH,DIRECT'
