@@ -1,15 +1,33 @@
 rule-providers:
-  gfw:
+  applications:
     type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
-    path: ./ruleset/gfw.yaml
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
     interval: 86400
   ChatGPT:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/G4free/clash-ruleset/main/ruleset/ChatGPT.yaml"
     path: ./ruleset/ChatGPT.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
     interval: 86400
   custom:
     type: http
@@ -23,8 +41,11 @@ rule-providers:
     path: /Users/lizhikui/go/bin/mixin.xml
     interval: 86400
 rules:
+  - 'RULE-SET,applications,DIRECT'
+  - 'RULE-SET,cncidr,DIRECT'
   - 'RULE-SET,ChatGPT,🇺🇸 美国节点'
   - 'RULE-SET,gfw,🌀 手动选择'
+  - 'RULE-SET,proxy,🌀 手动选择'
   - 'RULE-SET,custom,🌀 手动选择'
   - 'RULE-SET,local,🌀 手动选择'
   - 'MATCH,DIRECT'
