@@ -41,6 +41,8 @@ rule-providers:
     path: /Users/lizhikui/go/bin/mixin.xml
     interval: 86400
 rules:
+  - 'GEOIP,LAN,DIRECT'
+  - 'GEOIP,CN,DIRECT'
   - 'RULE-SET,applications,DIRECT'
   - 'RULE-SET,cncidr,DIRECT'
   - 'RULE-SET,ChatGPT,🇺🇸 美国节点'
