@@ -11,7 +11,6 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300) {
       // 请求成功，处理响应数据
-      console.log(xhr.responseText);
       result = yaml.parse(xhr.responseText);
     } else {
       // 请求失败，处理错误
@@ -21,7 +20,7 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
 
   // 发送请求
   xhr.send();
-  console.log(result)
-  
-  return result
+
+  //合并content和result两个对象
+  return { ...content, ...result}
 }
